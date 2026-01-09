@@ -1,5 +1,7 @@
+import Link from 'next/link';
+
 export default function Products() {
-  const products = [
+  const sampleProducts = [
     {
       name: 'فحم أ',
       englishName: 'Sample Product A',
@@ -33,7 +35,7 @@ export default function Products() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {products.map((product, index) => (
+          {sampleProducts.map((product, index) => (
             <div
               key={index}
               className="group bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl overflow-hidden shadow-lg hover-lift animate-fade-in-up"
@@ -63,6 +65,16 @@ export default function Products() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* View All Products Link */}
+        <div className="text-center mt-12">
+          <Link
+            href="/products"
+            className="inline-block bg-teal-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-teal-800 transition-colors"
+          >
+            عرض جميع المنتجات
+          </Link>
         </div>
       </div>
     </section>
